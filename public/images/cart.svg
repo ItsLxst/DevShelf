@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#6B7590" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Cart handle and body -->
+    <path d="M30 40 H50 L68 118 H150 L168 62 H62"/>
+  </g>
+
+  <!-- Wheels -->
+  <circle cx="78" cy="150" r="10" fill="#6B7590"/>
+  <circle cx="128" cy="150" r="10" fill="#6B7590"/>
+</svg>

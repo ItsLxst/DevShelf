@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8FAFC;
+    color: #0A2540;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, .brand-name {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+    margin-right: 2rem;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #64748B;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.nav-item.active {
+    color: #635BFF;
+    background-color: #EEF2FF;
+}
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #F1F5F9;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #64748B;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: #E2E8F0;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.hero {
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+}
+
+.badge-label {
+    background-color: #EEF2FF;
+    color: #635BFF;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.badge-text {
+    color: #64748B;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: #0A2540;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.hero-title .highlight {
+    color: #635BFF;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #475569;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: #94A3B8;
+    font-size: 0.875rem;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+}
+
+.stripe-text {
+    color: #635BFF;
+    font-weight: 600;
+}

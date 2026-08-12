@@ -1,0 +1,32 @@
+<svg width="720" height="720" viewBox="0 0 720 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C6CF5"/>
+      <stop offset="100%" stop-color="#5B5BEB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="80" y="60" width="576" height="576" rx="110" fill="url(#bgGradient)"/>
+
+  <!-- Two dots -->
+  <circle cx="392" cy="198" r="24" fill="#A9AAF3"/>
+  <circle cx="452" cy="192" r="34" fill="#A9AAF3"/>
+
+  <!-- Chevron arrow (behind bars, semi-transparent) -->
+  <polyline points="332,272 262,340 332,408"
+            fill="none"
+            stroke="#B9BAF5"
+            stroke-width="26"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            opacity="0.85"/>
+
+  <!-- Three horizontal bars -->
+  <rect x="270" y="228" width="252" height="32" rx="16" fill="#F5F6FE"/>
+  <rect x="270" y="326" width="252" height="32" rx="16" fill="#F5F6FE"/>
+  <rect x="270" y="424" width="252" height="32" rx="16" fill="#F5F6FE"/>
+
+  <!-- Vertical bar (on top, in front) -->
+  <rect x="222" y="188" width="30" height="304" rx="15" fill="#F5F6FE"/>
+</svg>
