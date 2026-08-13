@@ -47,3 +47,26 @@ filterButtons.forEach(button => {
         });
     });
 });
+
+// cart drawer functionality
+const cartOverlay = document.querySelector('.cart-overlay');
+const cartDrawer = document.querySelector('.cart-drawer');
+const closeCartBtn = document.querySelector('.close-cart');
+
+// open cart
+cartButton.addEventListener('click', () => {
+    cartOverlay.classList.add('open');
+    cartDrawer.classList.add('open');
+});
+
+// close cart click X
+closeCartBtn.addEventListener('click', () => {
+    cartOverlay.classList.remove('open');
+    cartDrawer.classList.remove('open');
+});
+
+// close cart click outside
+cartOverlay.addEventListener('click', () => {
+    cartOverlay.classList.remove('open');
+    cartDrawer.classList.remove('open');
+});

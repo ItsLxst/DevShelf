@@ -1,0 +1,12 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#6B7590" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Card outline -->
+    <rect x="28" y="52" width="144" height="96" rx="14"/>
+    <!-- Magnetic stripe -->
+    <line x1="28" y1="82" x2="172" y2="82"/>
+  </g>
+
+  <!-- Small detail dots (like card chip or numbers) -->
+  <rect x="44" y="112" width="36" height="10" rx="5" fill="#6B7590"/>
+  <rect x="44" y="130" width="60" height="8" rx="4" fill="#6B7590" opacity="0.5"/>
+</svg>

@@ -123,6 +123,51 @@
             </div>
         </div>
     </section>
+
+    <!-- cart overlay -->
+    <div class="cart-overlay"></div>
+    
+    <aside class="cart-drawer">
+        <div class="cart-header">
+            <h2 class="cart-title">Cart (0)</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-body">
+            <!-- empty cart -->
+            <div class="empty-cart">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+            </div>
+
+            <!-- cart with items -->
+            <div class="cart-items hidden">
+                <div class="cart-item">
+                    <div class="item-icon">📘</div>
+                    <div class="item-details">
+                        <h4>Node.js API Masterclass</h4>
+                        <p>E-Book</p>
+                    </div>
+                    <div class="item-actions">
+                        <span class="item-price">$29</span>
+                        <button class="remove-item">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-footer hidden">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="total-price">$0</span>
+            </div>
+            <button class="checkout-btn">
+                <img src="/images/card.svg" alt="Card Icon" width="18" height="18">
+                Continue to Payment
+            </button>
+            <p class="secure-badge">Secured by Stripe &middot; Sandbox mode</p>
+        </div>
+    </aside>
 </main>
 
 <%- include('partials/footer') %>
