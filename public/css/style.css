@@ -25,6 +25,9 @@ h1, h2, h3, .brand-name {
     background-color: #FFFFFF;
     border-bottom: 1px solid #E2E8F0;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav-container {
@@ -61,9 +64,10 @@ h1, h2, h3, .brand-name {
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.nav-item.active {
+.nav-item.active, .nav-item:hover {
     color: #635BFF;
     background-color: #EEF2FF;
 }
@@ -78,7 +82,7 @@ h1, h2, h3, .brand-name {
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    color: #64748B;
+    color: #475569;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -138,6 +142,113 @@ h1, h2, h3, .brand-name {
     color: #475569;
     max-width: 600px;
     line-height: 1.6;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.product-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #F8FAFC;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.card-badges {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card-badges span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+}
+
+.badge-bestseller { color: #D97706; background-color: #FEF3C7; }
+.badge-new { color: #059669; background-color: #D1FAE5; }
+.badge-popular { color: #7C3AED; background-color: #EDE9FE; }
+.badge-type { color: #64748B; border: 1px solid #E2E8F0; }
+
+.card-title {
+    font-size: 1.25rem;
+    color: #0A2540;
+    margin-bottom: 0.75rem;
+}
+
+.card-desc {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-meta {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin-bottom: 1.5rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.card-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0A2540;
+}
+
+.add-to-cart {
+    background-color: #635BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #4B45C6;
 }
 
 .footer {
