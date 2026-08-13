@@ -84,11 +84,20 @@ h1, h2, h3, .brand-name {
     font-weight: 600;
     color: #475569;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .cart-button:hover {
     background-color: #E2E8F0;
+}
+
+.cart-button.active {
+    background-color: #635BFF;
+    color: #FFFFFF;
+}
+
+.cart-button.active img {
+    filter: brightness(0) invert(1);
 }
 
 .main-container {
@@ -249,6 +258,24 @@ h1, h2, h3, .brand-name {
 
 .add-to-cart:hover {
     background-color: #4B45C6;
+}
+
+.add-to-cart.btn-added {
+    background-color: #059669;
+    color: #FFFFFF;
+}
+
+.add-to-cart.btn-added:hover {
+    background-color: #047857;
+}
+
+.add-to-cart.btn-again {
+    background-color: #EEF2FF;
+    color: #635BFF;
+}
+
+.add-to-cart.btn-again:hover {
+    background-color: #E0E7FF;
 }
 
 .footer {
