@@ -291,3 +291,7 @@ h1, h2, h3, .brand-name {
     color: #635BFF;
     font-weight: 600;
 }
+
+.hidden {
+    display: none !important;
+}

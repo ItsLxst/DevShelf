@@ -20,3 +20,30 @@ addToCartButtons.forEach(button => {
         }, 2000);
     });
 });
+
+// category filter
+const filterButtons = document.querySelectorAll('.nav-item');
+const productCards = document.querySelectorAll('.product-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); // when clicked won't jump to top of page
+
+        // filtered class gets the color
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        // iterate through cards and show/hide based on filter
+        productCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            
+            if (filterValue === 'all' || filterValue === category) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
