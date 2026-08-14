@@ -37,7 +37,12 @@
             <span class="card-meta"><%= product.meta_text %></span>
             <div class="card-footer">
                 <span class="card-price">$<%= parseInt(product.price) %></span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart"
+                    data-id="<%= product.id %>"
+                    data-title="<%= product.title %>"
+                    data-price="<%= parseInt(product.price) %>"
+                    data-icon="<%= product.icon %>">
+                    Add to cart</button>
             </div>
         </div>
         <% }) %>
