@@ -49,8 +49,8 @@ app.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `http://localhost:3000/success`, // payment successful
-      cancel_url: `http://localhost:3000/cancel`,   // payment cancel
+      success_url: `${process.env.BASE_URL}/success`,
+      cancel_url: `${process.env.BASE_URL}/cancel`,
     });
 
     // send id of created session to frontend
@@ -60,6 +60,14 @@ app.post('/create-checkout-session', async (req, res) => {
     console.error("Stripe Error:", err);
     res.status(500).json({ error: "Failed to create checkout session." });
   }
+});
+
+app.get('/success', (req, res) => {
+  res.render('success');
+});
+
+app.get('/cancel', (req, res) => {
+  res.render('cancel');
 });
 
 app.listen(port, () => {
