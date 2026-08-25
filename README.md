@@ -14,6 +14,8 @@ A digital product marketplace for developers — e-books and code templates, wit
 - Category filtering (All / E-Book / Template) with instant client-side filtering
 - Cart drawer: add/remove items, running total, item count on the cart button
 - Stripe Checkout integration — cart items are converted into a Stripe session and the user is redirected to Stripe's hosted payment page
+- Full purchase flow: cart → Stripe Checkout → webhook confirms payment → order marked as paid → download links delivered on the success page
+- Orders and order items persisted in PostgreSQL, linked to Stripe sessions via metadata
 
 ---
 
@@ -82,11 +84,7 @@ Open `http://localhost:3000` in your browser.
 
 ## 🔮 Future Improvements
 
-- [ ] Add user authentication for multi-user support
-- [ ] Fix hardcoded `localhost` Stripe success/cancel URLs so checkout redirects work correctly in production
-- [ ] Add the missing `/success` and `/cancel` routes and pages (currently only referenced in the Stripe redirect, not implemented)
-- [ ] Add Stripe webhook handling to confirm payments server-side instead of relying only on the redirect
-- [ ] Persist carts/orders in the database instead of keeping cart state only in the browser
-- [ ] Implement the actual post-purchase download flow (e-books/templates aren't delivered yet)
-- [ ] Add a `start`/`dev` script to `package.json`
+- [ ] Add user authentication for multi-user support (currently anonymous checkout)
 - [ ] Add input validation and basic tests
+- [ ] Add a `start`/`dev` script to `package.json`
+- [ ] Generate signed/expiring download links instead of static file paths
