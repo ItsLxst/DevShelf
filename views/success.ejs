@@ -1,5 +1,11 @@
 <h1>
-    🎉 Payment Successful
-    Thank you for your purchase!
-    Your payment has been processed successfully.
+    🎉 Payment Successful <br/>
+    Thank you for your purchase! <br />
+    Your payment has been processed successfully. <br />
 </h1>
+
+<ul>
+  <% items.forEach(item => { %>
+    <li><%= item.title %> — <a href="<%= item.file_path %>">Download</a></li>
+  <% }) %>
+</ul>

@@ -1,6 +1,6 @@
 import pool from "./db.js";
 
-const createTableQuery = `
+const createProductsTableQuery = `
 CREATE TABLE IF NOT EXISTS products (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -11,7 +11,28 @@ CREATE TABLE IF NOT EXISTS products (
     badge_text VARCHAR(50),
     badge_type VARCHAR(50),
     meta_text VARCHAR(255),
+    file_path VARCHAR(255) DEFAULT '/downloads/sample.pdf',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+`;
+
+const createOrdersTableQuery = `
+CREATE TABLE IF NOT EXISTS orders (
+    id SERIAL PRIMARY KEY,
+    stripe_session_id VARCHAR(255) UNIQUE,
+    status VARCHAR(20) NOT NULL DEFAULT 'pending',
+    total DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+`;
+
+const createOrderItemsTableQuery = `
+CREATE TABLE IF NOT EXISTS order_items (
+    id SERIAL PRIMARY KEY,
+    order_id INTEGER REFERENCES orders(id),
+    product_id INTEGER REFERENCES products(id),
+    quantity INTEGER NOT NULL DEFAULT 1,
+    price DECIMAL(10, 2) NOT NULL
 );
 `;
 
@@ -28,8 +49,17 @@ VALUES
 
 async function runSeed() {
     try {
-        await pool.query(createTableQuery);
-        await pool.query(insertProductsQuery);
+        await pool.query(createProductsTableQuery);
+        await pool.query(createOrdersTableQuery);
+        await pool.query(createOrderItemsTableQuery);
+
+        const check = await pool.query('SELECT COUNT(*) FROM products');
+        if (parseInt(check.rows[0].count) === 0) {
+            await pool.query(insertProductsQuery);
+            console.log("Products inserted.");
+        } else {
+            console.log("Products already exist, skipping insert.");
+        }
     }
     catch (err){
         console.error("Error during database seeding:", err);
